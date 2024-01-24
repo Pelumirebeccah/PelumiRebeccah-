@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class TwoDigitCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input two digits
+        System.out.print("Enter the first digit: ");
+        double num1 = scanner.nextDouble();
+System.out.print("Enter the second digit: ");
+        double num2 = scanner.nextDouble();
+
+        // Choose operation
+        System.out.print("Choose operation (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        // Perform calculation and handle edge cases
+        switch (operator) {
+            case '+':
+                System.out.println("Result: " + (num1 + num2));
+                break;
+            case '-':
+                System.out.println("Result: " + (num1 - num2));
+                break;
+            case '*':
+                System.out.println("Result: " + (num1 * num2));
+                break;
+            case '/':
+                if (num2 != 0) {
+                    System.out.println("Result: " + (num1 / num2));
+                } else {
+                    System.out.println("Error: Cannot divide by zero.");
+                }break;
+            default:
+                System.out.println("Error: Invalid operator.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
